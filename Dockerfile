@@ -18,7 +18,7 @@ RUN apk -X http://nl.alpinelinux.org/alpine/edge/testing/ -U add \
     cmake ../osm2pgsql-0.90.0 && make && make install && \
     apk del make cmake g++ python expat-dev geos-dev proj4-dev bzip2-dev zlib-dev boost-dev postgresql-dev && \
     chmod +x /usr/local/bin/updater-loop.sh && \
-    mkdir $UPDATE_DIR && \
+    mkdir -p $UPDATE_DIR && \
     rm -rf /osm2pgsql-0.90.0 /osm2pgsql-0.90.0.tar.gz /build /var/cache/apk/*
 
 CMD ["/usr/local/bin/updater-loop.sh"]
